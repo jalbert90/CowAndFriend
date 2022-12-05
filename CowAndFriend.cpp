@@ -35,6 +35,21 @@ int solve() {
 		}
 	}
 
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (x == 0) break;
+		while (x - a[i] >= 0) {
+			x -= a[i];
+			count++;
+		}
+	}
+	if (x != 0) {
+		ans = min(ans, count + 2);
+	}
+	else {
+		ans = min(ans, count);
+	}
+
 	return ans;
 }
 
