@@ -18,36 +18,7 @@ int solve() {
 	sort(a.begin(), a.end(), [](int x, int y) {return x > y;});
 
 	for (int i = 0; i < n; i++) {
-		if (x == a[i]) {
-			ans = min(ans, 1);
-			break;
-		}
-	}
-
-	if (2 * a[0] > x) {
-		ans = min(ans, 2);
-	}
-
-	for (int i = 0; i < n; i++) {
-		if (x % a[i] == 0) {
-			ans = min(ans, x / a[i]);
-			break;
-		}
-	}
-
-	int count = 0;
-	for (int i = 0; i < n; i++) {
-		if (x == 0) break;
-		while (x - a[i] >= 0) {
-			x -= a[i];
-			count++;
-		}
-	}
-	if (x != 0) {
-		ans = min(ans, count + 2);
-	}
-	else {
-		ans = min(ans, count);
+		//
 	}
 
 	return ans;
