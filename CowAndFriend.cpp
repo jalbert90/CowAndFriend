@@ -12,14 +12,21 @@ int solve() {
 
 	for (int i = 0; i < n; i++) {
 		cin >> a[i];
+		
+		if (a[i] == x) return 1;
+
 		maxD = max(maxD, a[i]);
 	}
 
-	sort(a.begin(), a.end(), [](int x, int y) {return x > y;});
+	//sort(a.begin(), a.end(), [](int x, int y) {return x > y;});
 
-	for (int i = 0; i < n; i++) {
-		//
+	int count = 0;
+	while (x - 2 * maxD > 0) {
+		x = x - maxD;
+		count++;
 	}
+
+	ans = count + 2;
 
 	return ans;
 }
